@@ -1,18 +1,8 @@
 const apiKey = "863242cfb2b1d357e6093d9a4df19a4b";
-const apiUrlKeb = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Kebili";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-async function getdes() {
-    const response = await fetch(apiUrlKeb + "&appid=" + apiKey);
-    const data = await response.json();
-    console.log(data);
-    document.querySelector(".temp").innerText = data.main.temp + " °C";
-    document.querySelector(".city").innerText = data.name;
-    document.querySelector(".humidity").innerText = data.main.humidity + "%";
-    document.querySelector(".wind").innerText = data.wind.speed + "km/h";
 
 
-}
 
 async function getWeather(city) {
     const response = await fetch(apiUrl + city + "&appid=" + apiKey);
